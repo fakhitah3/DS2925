@@ -1,14 +1,11 @@
 import streamlit as st
+import pandas as pd
 
-# App title
-st.title("My First Streamlit App")
+st.title("Finance Data Viewer")
 
-# Add some text
-st.write("Hello! 👋 This is a simple Streamlit app.")
+CSV_URL = "https://raw.githubusercontent.com/fakhitah3/DS2925/refs/heads/main/Finance_data.csv"
+# Load the data
+df = pd.read_csv(CSV_URL)
 
-# Input from user
-name = st.text_input("Enter your name:")
-
-# Button
-if st.button("Greet Me"):
-    st.success(f"Hello, {name}! Welcome to Streamlit 🚀")
+st.subheader("Data Preview")
+st.write(df.head())
