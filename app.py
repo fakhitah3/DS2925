@@ -21,3 +21,17 @@ ax.set_ylabel('Frequency')
 
 st.pyplot(fig)
 
+
+# Gender counts
+gender_counts = df['gender'].value_counts()
+
+# Create figure
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=90)
+ax.set_title('Distribution of Gender')
+ax.axis('equal')  # Equal aspect ratio ensures a circle
+
+# Show in Streamlit
+st.pyplot(fig)
+
+
